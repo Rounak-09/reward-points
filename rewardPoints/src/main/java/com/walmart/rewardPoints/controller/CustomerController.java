@@ -68,7 +68,7 @@ public class CustomerController {
     public ResponseEntity<Customer> updateCustomerHandler(@RequestBody Customer customer) {
         try {
             Customer response = customerService.updateCustomer(customer);
-            return new ResponseEntity<>(response, HttpStatus.CREATED);
+            return new ResponseEntity<>(response, HttpStatus.OK);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {

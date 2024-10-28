@@ -63,7 +63,6 @@ public class CustomerServiceImpl implements CustomerService {
     public Customer updateCustomer(Customer customer) {
         Validator.validateCustomer(customer); // Validate the data before adding it to the database
 
-        int i = 1/0;
         if (customerDAO.existsById(customer.getCustomerId())) {
             return customerDAO.save(customer);
         }
