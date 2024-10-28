@@ -1,0 +1,30 @@
+2024-10-28 19:44:42 [main] INFO  c.w.r.RewardPointsApplication -
+                Starting RewardPointsApplication using Java 1.8.0_412 on BHUKRK493706L with PID 2452 (C:\Rounak\Workspace\RewardPoints\rewardPoints\target\classes started by rounak.abraham in C:\Rounak\Workspace\RewardPoints\rewardPoints)
+2024-10-28 19:44:42 [main] DEBUG c.w.r.RewardPointsApplication -
+                Running with Spring Boot v2.7.1, Spring v5.3.21
+2024-10-28 19:44:42 [main] INFO  c.w.r.RewardPointsApplication -
+                No active profile set, falling back to 1 default profile: "default"
+2024-10-28 19:44:46 [main] INFO  c.w.r.RewardPointsApplication -
+                Started RewardPointsApplication in 5.019 seconds (JVM running for 5.863)
+2024-10-28 19:44:50 [http-nio-8080-exec-1] INFO  c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"001","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]
+2024-10-28 19:53:07 [main] INFO  c.w.r.RewardPointsApplication -
+                Starting RewardPointsApplication using Java 1.8.0_412 on BHUKRK493706L with PID 25724 (C:\Rounak\Workspace\RewardPoints\rewardPoints\target\classes started by rounak.abraham in C:\Rounak\Workspace\RewardPoints\rewardPoints)
+2024-10-28 19:53:07 [main] DEBUG c.w.r.RewardPointsApplication -
+                Running with Spring Boot v2.7.1, Spring v5.3.21
+2024-10-28 19:53:07 [main] INFO  c.w.r.RewardPointsApplication -
+                No active profile set, falling back to 1 default profile: "default"
+2024-10-28 19:53:12 [main] INFO  c.w.r.RewardPointsApplication -
+                Started RewardPointsApplication in 4.989 seconds (JVM running for 5.717)
+2024-10-28 19:53:20 [http-nio-8080-exec-2] INFO  c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"001","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]
+2024-10-28 19:53:20 [http-nio-8080-exec-2] ERROR c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"001","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]; error response: Customer is already present with customerId: 001
+2024-10-28 19:53:28 [http-nio-8080-exec-1] INFO  c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"005","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]
+2024-10-28 19:53:28 [http-nio-8080-exec-1] INFO  c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method response: {"headers":{},"body":{"customerId":"005","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"},"statusCodeValue":201,"statusCode":"CREATED"}
+2024-10-28 19:54:29 [http-nio-8080-exec-3] INFO  c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"005","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]
+2024-10-28 19:54:29 [http-nio-8080-exec-3] ERROR c.w.r.logger.LoggingAdvice -
+                method name: saveCustomerHandler; method args: [{"customerId":"005","customerName":"Rounak","phoneNumber":"7978881739","address":"Bhubaneswar"}]; error response: Customer is already present with customerId: 005

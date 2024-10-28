@@ -42,4 +42,10 @@ public class GlobalExceptionHandler {
         ErrorDetails err = new ErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
         return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
     }
+
+    @ExceptionHandler(Throwable.class)
+    public ResponseEntity<ErrorDetails> throwableHandler(Throwable ie, WebRequest wr) {
+        ErrorDetails err = new ErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
+        return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
+    }
 }
