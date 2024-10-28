@@ -2,8 +2,8 @@ package com.walmart.rewardPoints.controller;
 
 import com.walmart.rewardPoints.exception.SystemException;
 import com.walmart.rewardPoints.exception.UserException;
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.service.CustomerService;
+import com.walmart.rewardPoints.model.Invoice;
+import com.walmart.rewardPoints.service.InvoiceService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +13,21 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
 @RequestMapping("/walmart")
-public class CustomerController {
+public class InvoiceController {
 
     @Autowired
-    private CustomerService customerService;
+    private InvoiceService invoiceService;
 
-    Logger logger = LoggerFactory.getLogger(CustomerController.class);
+    Logger logger = LoggerFactory.getLogger(InvoiceController.class);
 
-    @PostMapping("/customers")
-    public ResponseEntity<Customer> saveCustomerHandler(@RequestBody Customer customer) {
+    @PostMapping("/invoices")
+    public ResponseEntity<Invoice> saveInvoiceHandler(@RequestBody Invoice invoice) {
         try {
-            Customer response = customerService.saveCustomer(customer);
-            return new ResponseEntity<>(response, HttpStatus.CREATED);
+            Invoice response = invoiceService.saveInvoice(invoice);
+            return new ResponseEntity(response, HttpStatus.CREATED);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {
@@ -36,11 +37,11 @@ public class CustomerController {
 
     }
 
-    @GetMapping("/customers")
-    public ResponseEntity<List<Customer>> getAllCustomersHandler() {
+    @GetMapping("/invoices")
+    public ResponseEntity<List<Invoice>> getAllInvoicesHandler() {
         try {
-            List<Customer> customerList = customerService.getAllCustomers();
-            return new ResponseEntity<>(customerList, HttpStatus.OK);
+            List<Invoice> invoiceList = invoiceService.getAllInvoices();
+            return new ResponseEntity<>(invoiceList, HttpStatus.OK);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {
@@ -50,11 +51,11 @@ public class CustomerController {
 
     }
 
-    @GetMapping("/customers/{customerId}")
-    public ResponseEntity<Customer> getCustomerByIdHandler(@PathVariable String customerId) {
+    @GetMapping("/invoices/{invoiceNumber}")
+    public ResponseEntity<Invoice> getInvoiceByInvoiceNumberHandler(@PathVariable String invoiceNumber) {
         try {
-            Customer customer = customerService.getCustomerById(customerId);
-            return new ResponseEntity<>(customer, HttpStatus.OK);
+            Invoice invoice = invoiceService.getInvoiceByInvoiceNumber(invoiceNumber);
+            return new ResponseEntity<>(invoice, HttpStatus.OK);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {
@@ -64,11 +65,11 @@ public class CustomerController {
 
     }
 
-    @PutMapping("/customers")
-    public ResponseEntity<Customer> updateCustomerHandler(@RequestBody Customer customer) {
+    @PutMapping("/invoices")
+    public ResponseEntity<Invoice> updateInvoiceHandler(@RequestBody Invoice invoice) {
         try {
-            Customer response = customerService.updateCustomer(customer);
-            return new ResponseEntity<>(response, HttpStatus.OK);
+            Invoice response = invoiceService.updateInvoice(invoice);
+            return new ResponseEntity(response, HttpStatus.OK);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {
@@ -78,11 +79,11 @@ public class CustomerController {
 
     }
 
-    @DeleteMapping("/customers/{customerId}")
-    public ResponseEntity<String> deleteCustomerByIdHandler(@PathVariable String customerId) {
+    @DeleteMapping("/invoices/{invoiceNumber}")
+    public ResponseEntity<String> deleteInvoiceByInvoiceNumberHandler(@PathVariable String invoiceNumber) {
         try {
-            customerService.deleteCustomerById(customerId);
-            return new ResponseEntity<>("Customers deleted successfully", HttpStatus.OK);
+            invoiceService.deleteInvoiceByInvoiceNumber(invoiceNumber);
+            return new ResponseEntity<>("Invoice deleted successfully", HttpStatus.OK);
         } catch (UserException e) {
             throw e;
         } catch (Exception e) {
@@ -91,4 +92,6 @@ public class CustomerController {
         }
 
     }
+
+
 }
