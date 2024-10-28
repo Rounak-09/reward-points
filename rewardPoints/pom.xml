@@ -12,7 +12,7 @@
 	<artifactId>rewardPoints</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>rewardPoints</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A Spring Boot project to calculate the reward points for every customer per month and total from the transactions</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -37,6 +37,21 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.6.9</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.9.2</version>
 		</dependency>
 
 		<dependency>
