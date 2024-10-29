@@ -141,3 +141,121 @@ If you want to access the app from outside your OpenShift installation, you have
 oc expose reward-points --hostname=www.example.com
 ```
 
+## API Endpoints
+
+Below are some important API endpoints with request and response example:-
+Creating a new customer:
+
+    URL: http://localhost:8080/shopping/customers
+    
+    METHOD: POST
+    
+    REQUEST BODY: {
+        "customerId": "006",
+        "customerName": "Ravi",
+        "phoneNumber": "7978881729",
+        "address": "Bangalore"
+    }
+    
+    RESPONSE: {
+        "customerId": "006",
+        "customerName": "Ravi",
+        "phoneNumber": "7978881729",
+        "address": "Bangalore"
+    }
+    
+A new customer record is inserted into the database and returned back in response.
+    
+Creating a new invoice:
+
+    URL: http://localhost:8080/shopping/invoices
+    
+    METHOD: POST
+    
+    REQUEST BODY: {
+        "customerId": "001",
+        "customerName": "Rounak",
+        "invoiceNumber": "001",
+        "invoiceDate": "2024-06-10",
+        "itemList": [
+            {
+                "itemNumber": "001",
+                "itemName": "Chips",
+                "quantity": 1,
+                "rate": 20.0,
+                "amount": 20.0
+            },
+            {
+                "itemNumber": "002",
+                "itemName": "Chocolate",
+                "quantity": 2,
+                "rate": 50.0,
+                "amount": 100.0
+            }
+        ],
+        "invoiceAmount": 120.00
+    }
+    
+    RESPONSE: {
+        "invoiceNumber": "001",
+        "invoiceDate": "2024-06-10",
+        "customerId": "001",
+        "customerName": "Rounak",
+        "itemList": [
+            {
+                "itemNumber": "001",
+                "itemName": "Chips",
+                "quantity": 1,
+                "rate": 20.0,
+                "amount": 20.0
+            },
+            {
+                "itemNumber": "002",
+                "itemName": "Chocolate",
+                "quantity": 2,
+                "rate": 50.0,
+                "amount": 100.0
+            }
+        ],
+        "invoiceAmount": 120.0
+    }    
+    
+A new invoice record is inserted into the database and returned back in response.
+
+Calculating the reward points:
+
+    URL: http://localhost:8080/shopping/rewards?from=2024-06-01&to=2024-08-31
+
+    METHOD: GET
+
+    REQUEST PARAMS:
+    from=YYYY-MM-DD
+    to=YYYY-MM-DD
+
+    RESPONSE: [
+        {
+            "customerId": "001",
+            "customerName": "Rounak",
+            "monthlyRewardPointsList": [
+                {
+                    "month": "JUNE",
+                    "rewardPoints": 90
+                }
+            ],
+            "totalRewardPoints": 90
+        }
+    ]
+
+The invoices with date within the date range provided by the user are considered as input.
+
+By default last 3 months transaction is considered if no date range is provided. 
+
+The reward points is calculated as per the business requirement and returned back in response.
+
+## Business Requirement
+A retailer offers a rewards program to its customers, awarding points based on each recorded purchase.
+
+A customer receives 2 points for every dollar spent over $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction. 
+(e.g. a $120 purchase = 2x$20 + 1x$50 = 90 points).
+
+Given a record of every transaction during a three month period, calculate the reward points earned for each customer per month and total. 
