@@ -17,7 +17,7 @@ public class LoggingAdvice {
 
     Logger logger = LoggerFactory.getLogger(LoggingAdvice.class);
 
-    @Pointcut(value = "execution(* com.walmart.rewardPoints.*.*.*(..) )")
+    @Pointcut(value = "execution(* com.walmart.rewardPoints.controller.*.*(..) )")
     public void myPointcut() {
 
     }

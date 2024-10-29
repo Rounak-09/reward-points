@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @RestController
-@RequestMapping("/walmart")
+@RequestMapping("/shopping")
 public class InvoiceController {
 
     @Autowired
