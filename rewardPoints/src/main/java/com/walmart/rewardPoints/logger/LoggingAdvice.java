@@ -1,6 +1,6 @@
 package com.walmart.rewardPoints.logger;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.gson.Gson;
 import com.walmart.rewardPoints.exception.SystemException;
 import com.walmart.rewardPoints.exception.UserException;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -17,7 +17,7 @@ public class LoggingAdvice {
 
     Logger logger = LoggerFactory.getLogger(LoggingAdvice.class);
 
-    @Pointcut(value = "execution(* com.walmart.rewardPoints.controller.*.*(..) )")
+    @Pointcut(value = "execution(* com.walmart.rewardPoints.*.*.*(..) )")
     public void myPointcut() {
 
     }
@@ -25,13 +25,13 @@ public class LoggingAdvice {
     @Around("myPointcut()")
     public Object applicationLogger(ProceedingJoinPoint point) {
         String methodName = point.getSignature().getName();
-        ObjectMapper mapper = new ObjectMapper();
+        Gson gson = new Gson();
         String methodArguments = "";
         try {
-            methodArguments = mapper.writeValueAsString(point.getArgs());
+            methodArguments = gson.toJson(point.getArgs());
             logger.info("method name: " + methodName + "; method args: " + methodArguments);
             Object response = point.proceed();
-            logger.info("method name: " + methodName + "; method response: " + mapper.writeValueAsString(response));
+            logger.info("method name: " + methodName + "; method response: " + gson.toJson(response));
             return response;
         } catch (UserException e) {
             logger.error("method name: " + methodName + "; method args: " + methodArguments + "; error response: " + e.getMessage());
