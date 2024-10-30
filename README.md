@@ -44,11 +44,11 @@ You should be able to see this screen:
 ## Running the tests
 
 There are several ways to run the tests in a spring boot application. 
-One way is to execute the test file from your IDE in the:
+One way is to execute the test files one by one from your IDE, for example:
 
-    rewardPoints/src/test/java/com/walmart/rewardPoints/RewardPointsApplicationTests.java
+    rewardPoints/src/test/java/com/walmart/rewardPoints/controller/CustomerControllerTest.java
 
-Alternatively you can right-click on the root folder and select Run All Tests in your IDE:
+Alternatively you can right-click on the root folder and select Run All Tests or press Ctrl+Shift+F10 in your IDE:
 
 ![image](https://github.com/user-attachments/assets/21d89c2e-f444-4a75-ab40-273477efbf32)
 
