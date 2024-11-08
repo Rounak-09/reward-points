@@ -22,7 +22,7 @@ A step by step series of examples that tell you how to get a development environ
 
 There are several ways to run a Spring Boot application on your local machine. One way is to execute the main method from your IDE in the:
 
-    rewardPoints/src/main/java/com/walmart/rewardPoints/RewardPointsApplication.java
+    rewardPoints/src/main/java/com/walmart/rewards/RewardPointsApplication.java
 
 Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
@@ -46,7 +46,7 @@ You should be able to see this screen:
 There are several ways to run the tests in a spring boot application. 
 One way is to execute the test files one by one from your IDE, for example:
 
-    rewardPoints/src/test/java/com/walmart/rewardPoints/controller/CustomerControllerTest.java
+    rewardPoints/src/test/java/com/walmart/rewards/controller/CustomerControllerTest.java
 
 Alternatively you can right-click on the root folder and select Run All Tests or press Ctrl+Shift+F10 in your IDE:
 
