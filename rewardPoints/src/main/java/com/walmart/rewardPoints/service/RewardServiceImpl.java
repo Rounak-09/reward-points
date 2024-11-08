@@ -1,10 +1,10 @@
-package com.walmart.rewardPoints.service;
+package com.walmart.rewardpoints.service;
 
-import com.walmart.rewardPoints.dto.CustomerRewardPoints;
-import com.walmart.rewardPoints.helper.RewardCalculator;
-import com.walmart.rewardPoints.model.Invoice;
-import com.walmart.rewardPoints.repository.InvoiceDAO;
-import com.walmart.rewardPoints.utility.Converter;
+import com.walmart.rewardpoints.dto.CustomerRewardPoints;
+import com.walmart.rewardpoints.helper.RewardCalculator;
+import com.walmart.rewardpoints.model.Invoice;
+import com.walmart.rewardpoints.repository.InvoiceDAO;
+import com.walmart.rewardpoints.utility.Converter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,15 @@ import java.util.List;
 @Service
 public class RewardServiceImpl implements RewardService {
 
-    @Autowired
     private InvoiceDAO invoiceDAO;
 
-    @Autowired
     private RewardCalculator rewardCalculator;
+
+    @Autowired
+    public RewardServiceImpl(InvoiceDAO invoiceDAO, RewardCalculator rewardCalculator) {
+        this.invoiceDAO = invoiceDAO;
+        this.rewardCalculator = rewardCalculator;
+    }
 
     @Override
     public List<CustomerRewardPoints> getCustomerRewardPoints(String from, String to) {

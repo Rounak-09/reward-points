@@ -1,14 +1,10 @@
-package com.walmart.rewardPoints.service;
+package com.walmart.rewardpoints.service;
 
-import com.walmart.rewardPoints.dto.CustomerRewardPoints;
-import com.walmart.rewardPoints.dto.MonthlyRewardPoints;
-import com.walmart.rewardPoints.model.Invoice;
-import com.walmart.rewardPoints.repository.InvoiceDAO;
+import com.walmart.rewardpoints.dto.CustomerRewardPoints;
+import com.walmart.rewardpoints.dto.MonthlyRewardPoints;
+import com.walmart.rewardpoints.model.Invoice;
+import com.walmart.rewardpoints.repository.InvoiceDAO;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -24,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @SpringBootTest
-public class RewardServiceTest {
+class RewardServiceTest {
 
     @Autowired
     private RewardService rewardService;

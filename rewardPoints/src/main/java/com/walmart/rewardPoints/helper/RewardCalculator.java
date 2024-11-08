@@ -1,9 +1,9 @@
-package com.walmart.rewardPoints.helper;
+package com.walmart.rewardpoints.helper;
 
-import com.walmart.rewardPoints.dto.CustomerRewardPoints;
-import com.walmart.rewardPoints.dto.MonthlyRewardPoints;
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.model.Invoice;
+import com.walmart.rewardpoints.dto.CustomerRewardPoints;
+import com.walmart.rewardpoints.dto.MonthlyRewardPoints;
+import com.walmart.rewardpoints.model.Customer;
+import com.walmart.rewardpoints.model.Invoice;
 import org.springframework.stereotype.Component;
 
 import java.time.Month;

@@ -1,10 +1,10 @@
-package com.walmart.rewardPoints.service;
+package com.walmart.rewardpoints.service;
 
-import com.walmart.rewardPoints.exception.UserException;
-import com.walmart.rewardPoints.model.Invoice;
-import com.walmart.rewardPoints.repository.CustomerDAO;
-import com.walmart.rewardPoints.repository.InvoiceDAO;
-import com.walmart.rewardPoints.utility.Validator;
+import com.walmart.rewardpoints.exception.UserException;
+import com.walmart.rewardpoints.model.Invoice;
+import com.walmart.rewardpoints.repository.CustomerDAO;
+import com.walmart.rewardpoints.repository.InvoiceDAO;
+import com.walmart.rewardpoints.utility.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +14,15 @@ import java.util.Optional;
 @Service
 public class InvoiceServiceImpl implements InvoiceService {
 
-    @Autowired
     private InvoiceDAO invoiceDAO;
 
-    @Autowired
     private CustomerDAO customerDAO;
+
+    @Autowired
+    public InvoiceServiceImpl(InvoiceDAO invoiceDAO, CustomerDAO customerDAO) {
+        this.invoiceDAO = invoiceDAO;
+        this.customerDAO = customerDAO;
+    }
 
     @Override
     public Invoice saveInvoice(Invoice invoice) {

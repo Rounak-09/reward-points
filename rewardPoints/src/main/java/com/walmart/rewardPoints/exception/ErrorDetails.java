@@ -1,4 +1,4 @@
-package com.walmart.rewardPoints.exception;
+package com.walmart.rewardpoints.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

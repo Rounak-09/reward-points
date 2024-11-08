@@ -1,6 +1,6 @@
-package com.walmart.rewardPoints.utility;
+package com.walmart.rewardpoints.utility;
 
-import com.walmart.rewardPoints.exception.UserException;
+import com.walmart.rewardpoints.exception.UserException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;

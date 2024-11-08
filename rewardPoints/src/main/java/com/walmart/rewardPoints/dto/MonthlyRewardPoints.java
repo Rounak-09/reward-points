@@ -1,4 +1,4 @@
-package com.walmart.rewardPoints.dto;
+package com.walmart.rewardpoints.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.walmart.rewardPoints.exception;
+package com.walmart.rewardpoints.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -48,4 +48,5 @@ public class GlobalExceptionHandler {
         ErrorDetails err = new ErrorDetails(LocalDateTime.now(), ie.getMessage(), wr.getDescription(false));
         return new ResponseEntity<>(err, HttpStatus.BAD_REQUEST);
     }
+
 }

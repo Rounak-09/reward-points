@@ -1,6 +1,6 @@
-package com.walmart.rewardPoints.service;
+package com.walmart.rewardpoints.service;
 
-import com.walmart.rewardPoints.model.Invoice;
+import com.walmart.rewardpoints.model.Invoice;
 
 import java.util.List;
 

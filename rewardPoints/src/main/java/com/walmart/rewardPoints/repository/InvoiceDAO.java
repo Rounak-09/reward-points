@@ -1,6 +1,6 @@
-package com.walmart.rewardPoints.repository;
+package com.walmart.rewardpoints.repository;
 
-import com.walmart.rewardPoints.model.Invoice;
+import com.walmart.rewardpoints.model.Invoice;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.time.LocalDate;

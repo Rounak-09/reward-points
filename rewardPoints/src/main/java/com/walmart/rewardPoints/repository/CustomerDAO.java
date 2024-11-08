@@ -1,6 +1,6 @@
-package com.walmart.rewardPoints.repository;
+package com.walmart.rewardpoints.repository;
 
-import com.walmart.rewardPoints.model.Customer;
+import com.walmart.rewardpoints.model.Customer;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface CustomerDAO extends MongoRepository<Customer, String> {

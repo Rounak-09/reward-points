@@ -1,4 +1,4 @@
-package com.walmart.rewardPoints.dto;
+package com.walmart.rewardpoints.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -27,6 +27,7 @@ public class CustomerRewardPoints {
 
     @Override
     public int hashCode() {
+
         return Objects.hash(customerId, customerName, monthlyRewardPointsList, totalRewardPoints);
     }
 

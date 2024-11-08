@@ -1,7 +1,7 @@
-package com.walmart.rewardPoints.controller;
+package com.walmart.rewardpoints.controller;
 
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.service.CustomerService;
+import com.walmart.rewardpoints.model.Customer;
+import com.walmart.rewardpoints.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,8 +13,12 @@ import java.util.List;
 @RequestMapping("/shopping")
 public class CustomerController {
 
-    @Autowired
     private CustomerService customerService;
+
+    @Autowired
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @PostMapping("/customers")
     public ResponseEntity<Customer> saveCustomerHandler(@RequestBody Customer customer) {
@@ -26,7 +30,6 @@ public class CustomerController {
     public ResponseEntity<List<Customer>> getAllCustomersHandler() {
         List<Customer> customerList = customerService.getAllCustomers();
         return new ResponseEntity<>(customerList, HttpStatus.OK);
-
     }
 
     @GetMapping("/customers/{customerId}")

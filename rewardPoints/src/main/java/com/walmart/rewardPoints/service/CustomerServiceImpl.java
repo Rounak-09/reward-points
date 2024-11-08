@@ -1,9 +1,9 @@
-package com.walmart.rewardPoints.service;
+package com.walmart.rewardpoints.service;
 
-import com.walmart.rewardPoints.exception.UserException;
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.repository.CustomerDAO;
-import com.walmart.rewardPoints.utility.Validator;
+import com.walmart.rewardpoints.exception.UserException;
+import com.walmart.rewardpoints.model.Customer;
+import com.walmart.rewardpoints.repository.CustomerDAO;
+import com.walmart.rewardpoints.utility.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +14,12 @@ import java.util.Optional;
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
-    @Autowired
     private CustomerDAO customerDAO;
+
+    @Autowired
+    public CustomerServiceImpl(CustomerDAO customerDAO) {
+        this.customerDAO = customerDAO;
+    }
 
     @Override
     public List<Customer> getAllCustomers() {

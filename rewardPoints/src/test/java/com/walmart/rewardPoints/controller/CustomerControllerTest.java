@@ -1,7 +1,7 @@
-package com.walmart.rewardPoints.controller;
+package com.walmart.rewardpoints.controller;
 
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.repository.CustomerDAO;
+import com.walmart.rewardpoints.model.Customer;
+import com.walmart.rewardpoints.repository.CustomerDAO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
 @SpringBootTest
-public class CustomerControllerTest {
+class CustomerControllerTest {
 
     @Autowired
     private CustomerController customerController;

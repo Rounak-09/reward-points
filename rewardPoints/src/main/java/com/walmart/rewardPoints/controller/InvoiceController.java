@@ -1,7 +1,7 @@
-package com.walmart.rewardPoints.controller;
+package com.walmart.rewardpoints.controller;
 
-import com.walmart.rewardPoints.model.Invoice;
-import com.walmart.rewardPoints.service.InvoiceService;
+import com.walmart.rewardpoints.model.Invoice;
+import com.walmart.rewardpoints.service.InvoiceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,13 +14,17 @@ import java.util.List;
 @RequestMapping("/shopping")
 public class InvoiceController {
 
-    @Autowired
     private InvoiceService invoiceService;
+
+    @Autowired
+    public InvoiceController(InvoiceService invoiceService) {
+        this.invoiceService = invoiceService;
+    }
 
     @PostMapping("/invoices")
     public ResponseEntity<Invoice> saveInvoiceHandler(@RequestBody Invoice invoice) {
         Invoice response = invoiceService.saveInvoice(invoice);
-        return new ResponseEntity(response, HttpStatus.CREATED);
+        return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
     @GetMapping("/invoices")
@@ -38,7 +42,7 @@ public class InvoiceController {
     @PutMapping("/invoices")
     public ResponseEntity<Invoice> updateInvoiceHandler(@RequestBody Invoice invoice) {
         Invoice response = invoiceService.updateInvoice(invoice);
-        return new ResponseEntity(response, HttpStatus.OK);
+        return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @DeleteMapping("/invoices/{invoiceNumber}")

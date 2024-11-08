@@ -1,9 +1,9 @@
-package com.walmart.rewardPoints.utility;
+package com.walmart.rewardpoints.utility;
 
-import com.walmart.rewardPoints.exception.UserException;
-import com.walmart.rewardPoints.model.Customer;
-import com.walmart.rewardPoints.model.Invoice;
-import com.walmart.rewardPoints.model.Item;
+import com.walmart.rewardpoints.exception.UserException;
+import com.walmart.rewardpoints.model.Customer;
+import com.walmart.rewardpoints.model.Invoice;
+import com.walmart.rewardpoints.model.Item;
 
 import java.time.LocalDate;
 import java.util.List;

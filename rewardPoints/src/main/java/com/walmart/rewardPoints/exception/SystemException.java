@@ -1,12 +1,9 @@
-package com.walmart.rewardPoints.exception;
+package com.walmart.rewardpoints.exception;
 
 public class SystemException extends RuntimeException {
-
-    public SystemException() {
-
-    }
 
     public SystemException(String message) {
         super(message);
     }
+
 }

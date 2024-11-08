@@ -1,4 +1,4 @@
-package com.walmart.rewardPoints.model;
+package com.walmart.rewardpoints.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

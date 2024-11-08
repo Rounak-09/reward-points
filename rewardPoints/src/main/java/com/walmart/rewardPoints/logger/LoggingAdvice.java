@@ -1,8 +1,8 @@
-package com.walmart.rewardPoints.logger;
+package com.walmart.rewardpoints.logger;
 
 import com.google.gson.Gson;
-import com.walmart.rewardPoints.exception.SystemException;
-import com.walmart.rewardPoints.exception.UserException;
+import com.walmart.rewardpoints.exception.SystemException;
+import com.walmart.rewardpoints.exception.UserException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -17,7 +17,7 @@ public class LoggingAdvice {
 
     Logger logger = LoggerFactory.getLogger(LoggingAdvice.class);
 
-    @Pointcut(value = "execution(* com.walmart.rewardPoints.controller.*.*(..) )")
+    @Pointcut(value = "execution(* com.walmart.rewardpoints.controller.*.*(..) )")
     public void myPointcut() {
 
     }
@@ -29,15 +29,14 @@ public class LoggingAdvice {
         String methodArguments = "";
         try {
             methodArguments = gson.toJson(point.getArgs());
-            logger.info("method name: " + methodName + "; method args: " + methodArguments);
+            logger.info(String.format("method name: %s; method args: %s", methodName, methodArguments));
             Object response = point.proceed();
-            logger.info("method name: " + methodName + "; method response: " + gson.toJson(response));
+            logger.info(String.format("method name: %s; method response: %s", methodName, gson.toJson(response)));
             return response;
         } catch (UserException e) {
-            logger.error("method name: " + methodName + "; method args: " + methodArguments + "; error response: " + e.getMessage());
             throw e;
         } catch (Throwable e) {
-            logger.error("method name: " + methodName + "; method args: " + methodArguments + "; error response: " + e.getMessage());
+            logger.error(String.format("method name: %s; method args: %s; error response: %s", methodName, methodArguments, e.getMessage()));
             throw new SystemException("Something went wrong, please try again later!");
         }
 
